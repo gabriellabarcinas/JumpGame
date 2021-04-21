@@ -8,6 +8,8 @@ int main(int argc, char** argv) {
 
     nums = convertAndStoreCommandLineArgs(argc, argv);
 
+    makeJump(nums);
+
     return 0;
 }
 

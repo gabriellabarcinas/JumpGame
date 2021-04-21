@@ -2,6 +2,7 @@
 // Created by Gabby Barcinas on 4/20/21.
 //
 #include <vector>
+#include <iostream>
 
 std::vector<int> convertAndStoreCommandLineArgs(int argc, char**argv){
     std::vector<int> nums; // create a vector to store command line args
@@ -14,3 +15,14 @@ std::vector<int> convertAndStoreCommandLineArgs(int argc, char**argv){
     return nums;
 }
 
+void makeJump(std::vector<int>& nums){
+    int numMoves = 0;
+
+    for(const auto& num : nums){
+        if(num == 0){
+            std::cout << "There is no solution to the given game." << std::endl;
+        }if (num > 0){
+
+        }
+    }
+}
