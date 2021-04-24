@@ -11,7 +11,9 @@ int main(int argc, char** argv) {
     nums = convertAndStoreCommandLineArgs(argc, argv);
     int len = nums.size();
 
-    Jump(nums, len, 0);
+    bool solution = Jump(nums, moves, len, 0); // returns true or false if there is a possible solution
+
+    printSolution(moves, solution);
 
     return 0;
 }

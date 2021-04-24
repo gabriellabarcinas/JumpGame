@@ -7,6 +7,7 @@
 #include <vector>
 
 std::vector<int> convertAndStoreCommandLineArgs(int argc, char**argv);
-bool Jump(std::vector<int>& nums, int numsLength, int curr);
+bool Jump(std::vector<int>& nums, std::vector<int>& moves, int numsLength, int curr);
+void printSolution(std::vector<int>& moves, bool solution);
 
 #endif //JUMPGAME_NUMS_H
