@@ -7,5 +7,6 @@
 #include <vector>
 
 std::vector<int> convertAndStoreCommandLineArgs(int argc, char**argv);
-void makeJump(std::vector<int>& nums);
+bool Jump(std::vector<int>& nums, int numsLength, int curr);
+
 #endif //JUMPGAME_NUMS_H
