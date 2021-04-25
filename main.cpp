@@ -6,12 +6,12 @@
 int main(int argc, char** argv) {
     std::vector<int> nums; // vector to store given integers
     std::vector<int> moves; // vector to store the indices/moves made
-    int curr = 0;
+    std::vector<bool> seen = {false};
 
     nums = convertAndStoreCommandLineArgs(argc, argv);
     int len = nums.size();
 
-    bool solution = Jump(nums, moves, len, 0); // returns true or false if there is a possible solution
+    bool solution = makeMinJumps(nums,moves, len, 0); // returns true or false if there is a possible solution
 
     printSolution(moves, solution);
 

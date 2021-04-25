@@ -31,23 +31,35 @@ void printSolution(std::vector<int>& moves, bool solution){
     }
 }
 
-bool Jump(std::vector<int>& nums, std::vector<int>& moves, int numsLength, int curr){
+
+int minJumps(std::vector<int>& nums, int numsLength, int currIndex){
+
+}
+
+bool makeMinJumps(std::vector<int>& nums, std::vector<int>& moves, int numsLength, int curr){
 
 //    std::cout << "Index " << curr << " contains: " <<  nums[curr] << std::endl;
-    if(nums.empty()){ // base case if there is no given integers
-        return false;
-    }if (nums[curr] <= 0 || nums[curr] > numsLength) { // base case when a given jump is not allowed
-        return false;
-    }if (curr == numsLength - 1) { // base case when we reach the last int
+    if (curr == numsLength - 1) { // base case when we reach the last int
         moves.push_back(curr);
         return true;
-    }if (Jump(nums, moves, numsLength, curr - nums[curr])){
-        moves.insert(moves.begin(), curr);
-        return true;
-    }if (Jump(nums, moves, numsLength, curr + nums[curr])) {
-        moves.insert(moves.begin(), curr);
-        return true;
+    }if (curr < 0 or curr > numsLength) { // base case if the index is out of range
+        return false;
+    }if (nums[curr] < 0){ // base case if an index has already been checked
+        return false;
     }
+
+    nums[curr] = -nums[curr]; // mark index as checked
+    if(curr + nums[curr] < numsLength) {
+        if (makeMinJumps(nums, moves, numsLength, curr - nums[curr])) {
+            moves.insert(moves.begin(), curr);
+            return true;
+        }
+        if (makeMinJumps(nums, moves, numsLength, curr + nums[curr])) {
+            moves.insert(moves.begin(), curr);
+            return true;
+        }
+    }
+    return false;
 }
 
 
