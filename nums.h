@@ -7,7 +7,8 @@
 #include <vector>
 
 std::vector<int> convertAndStoreCommandLineArgs(int argc, char**argv);
-bool makeMinJumps(std::vector<int>& nums, std::vector<int>& moves, int numsLength, int curr);
-void printSolution(std::vector<int>& moves, bool solution);
+void Jumps(std::vector<int>& nums, std::vector<int> moves, int dest, int curr, std::vector<int>& minJumps);
+void printSolution(std::vector<int>& minJumps);
 
 #endif //JUMPGAME_NUMS_H
+
